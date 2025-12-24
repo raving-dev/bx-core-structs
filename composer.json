@@ -1,0 +1,20 @@
+{
+    "name": "raving-dev/bx-core-structs",
+    "description": "1C Bitrix core structs",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RavingDev\\BxCoreStructs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Yashin",
+            "email": "me@alexey-yashin.ru"
+        }
+    ],
+    "require": {
+      "raving-dev/case-converter": "^1.0"
+    }
+}
