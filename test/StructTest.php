@@ -22,8 +22,8 @@ class StructTest extends TestCase
     public function testProps(): void
     {
         $data = new ListHeaderStruct([
-            'CONTENT' => 'Test',
             'ID' => 'test',
+            'CONTENT' => 'Test',
         ]);
 
         $data->align = 'center';
@@ -32,6 +32,14 @@ class StructTest extends TestCase
         $this->assertEquals(
             ['id' => 'test', 'content' => 'Test', 'align' => 'center', 'sort' => 'test_field'],
             (array)$data
+        );
+    }
+
+    public function testMagic(): void
+    {
+        $this->assertEquals(
+            ['id' => 'test', 'content' => 'test'],
+            (array)ListHeaderStruct::c()->id('test')
         );
     }
 }

@@ -15,4 +15,10 @@ use RavingDev\CaseConverter\CaseEnum;
 class ListHeaderStruct extends AbstractStruct
 {
     protected const KEY_CASE = CaseEnum::SNAKE;
+
+    protected function __setId(string $value): void
+    {
+        $this->id = $value;
+        $this->content($value);
+    }
 }
