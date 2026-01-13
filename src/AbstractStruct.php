@@ -39,6 +39,11 @@ abstract class AbstractStruct implements ArrayAccess
      */
     public function offsetGet(mixed $offset): mixed
     {
+        $magicMethod = [$this, '__get' . CaseConverter::toPascalCase($offset)];
+        if (method_exists(...$magicMethod)) {
+            return $magicMethod();
+        }
+
         $key = $this->_key($offset);
         return $this->$key;
     }
